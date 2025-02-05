@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import styles from "./page.module.css";
 import { MdDelete } from "react-icons/md";
-import Link from "next/link";
 import Navbar from "@/app/Layout/Navbar/Navbar";
+import base_url from "@/Lib/baseUrl";
 
 
 export default function Home() {
@@ -15,7 +15,6 @@ export default function Home() {
   const [BmiData, setBmiData] = useState<any[]>([]);
   const [friends, setFriends] = useState<any[]>([]);
   const [selectedTarget, setSelectedTarget] = useState<string>("myself");
-  const [shouldRefetch, setShouldRefetch] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -32,7 +31,7 @@ export default function Home() {
 
   const fetchBmiData = async (token: string, target: string) => {
     
-      const res = await fetch("/api/Bmi/getBmiData", {
+      const res = await fetch(`${base_url}/api/Bmi/getBmiData`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, target }),
@@ -51,7 +50,7 @@ export default function Home() {
 
   // Fetch friend list
   const fetchFriends = async (token: string) => {
-     const res = await fetch("/api/AddFriend/getAllFriend", {
+     const res = await fetch(`${base_url}/api/AddFriend/getAllFriend`, {
        method: "GET",
        headers: { authorization: token }
      });
@@ -93,7 +92,7 @@ export default function Home() {
       return;
     }
       const token = localStorage.getItem("token");
-      const res = await fetch('/api/Bmi/deleteBmi', {
+      const res = await fetch(`${base_url}/api/Bmi/deleteBmi`, {
         method: "DELETE",
         headers: 
         { "Content-Type": "application/json" },

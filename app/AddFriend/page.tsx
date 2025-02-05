@@ -5,6 +5,7 @@ import { Inputbox } from '@/Components/InputBox/InputBox';
 import { SnackbarProvider, enqueueSnackbar } from 'notistack';
 import Navbar from "@/app/Layout/Navbar/Navbar";
 import styles from './page.module.css';
+import base_url from '@/Lib/baseUrl';
 
 const AddFriend = () => {
   const [email, setEmail] = useState<string>("");
@@ -25,7 +26,7 @@ const AddFriend = () => {
   }, [router]);
 
   const fetchFriends = async (token: string) => {
-    const res = await fetch("/api/AddFriend/getAllFriend", {
+    const res = await fetch(`${base_url}/api/AddFriend/getAllFriend`, {
       method: "GET",
       headers: { authorization: token }
     });
@@ -72,7 +73,7 @@ const AddFriend = () => {
       enqueueSnackbar("No friend selected for update", { variant: "warning" });
       return;
     }
-    const res = await fetch("/api/AddFriend/updateFriend", {
+    const res = await fetch(`${base_url}/api/AddFriend/updateFriend`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ friendId: editingFriendId, Femail: email, Fname: name.trim().toUpperCase(), token })
@@ -100,7 +101,7 @@ const AddFriend = () => {
       return;
     }
     // Now send friendId instead of Femail
-    const res = await fetch("/api/AddFriend/deleteFriend", {
+    const res = await fetch(`${base_url}/api/AddFriend/deleteFriend`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ friendId, token })

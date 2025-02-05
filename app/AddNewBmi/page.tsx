@@ -8,6 +8,7 @@ import styles from './page.module.css';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
+import base_url from '@/Lib/baseUrl';
 
 const BMIPage = () => {
   // BMI form states
@@ -39,7 +40,7 @@ const BMIPage = () => {
 
   // Fetch friends from your already created getAllFriends API
   const fetchFriends = async (token: string) => {
-    const res = await fetch("/api/AddFriend/getAllFriend", {
+    const res = await fetch(`${base_url}/api/AddFriend/getAllFriend`, {
       method: "GET",
       headers: { authorization: token }
     });
@@ -104,7 +105,7 @@ const BMIPage = () => {
     }
     
     // Call the saveBmi API with the proper payload
-    const res = await fetch("/api/Bmi", {
+    const res = await fetch(`${base_url}/api/Bmi`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from "./RegisterPage.module.css";
+import base_url from "@/Lib/baseUrl";
 
 
 import { SnackbarProvider,enqueueSnackbar } from 'notistack';
@@ -36,7 +37,7 @@ export default function RegisterPage() {
         
         
 
-        const response = await fetch("/api/auth/register", {
+        const response = await fetch(`${base_url}/api/auth/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

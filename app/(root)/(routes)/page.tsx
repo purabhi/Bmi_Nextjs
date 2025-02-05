@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import styles from "./page.module.css";
 import Image from 'next/image'
+import base_url from "@/Lib/baseUrl";
 
 
 
@@ -29,7 +30,7 @@ export default function LoginPage() {
         setIsLoading(true);
     
        
-            const response = await fetch("/api/auth/login", {
+            const response = await fetch(`${base_url}/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import styles from "./page.module.css";
 import Navbar from "@/app/Layout/Navbar/Navbar";
+import base_url from "@/Lib/baseUrl";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -16,8 +17,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { MdDelete } from "react-icons/md"; // if needed for deletion
-import Link from "next/link";
+
 
 ChartJS.register(
   CategoryScale,
@@ -54,7 +54,7 @@ export default function Statistics() {
   // Function to fetch BMI data based on target
   const fetchBmiData = async (token: string, target: string) => {
     
-      const res = await fetch("/api/Bmi/getBmiData", {
+      const res = await fetch(`${base_url}/api/Bmi/getBmiData`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, target }),
@@ -71,7 +71,7 @@ export default function Statistics() {
 
   const fetchFriends = async (token: string) => {
     
-      const res = await fetch("/api/AddFriend/getAllFriend", {
+      const res = await fetch(`${base_url}/api/AddFriend/getAllFriend`, {
         method: "GET",
         headers: { authorization: token },
       });

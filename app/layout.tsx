@@ -4,18 +4,27 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = 
+{
   title: "BMI CALCULATOR",
   description: " A bmi app where you can kep a track your bmi's",
+  icons: 
+  {
+    icon: "/logo.webp", // This automatically sets <link rel="icon">
+  },
 };
 
-export default function RootLayout({
+export default function RootLayout(
+{
   children,
-}: Readonly<{
+}: Readonly<
+{
   children: React.ReactNode;
-}>) {
+}>) 
+{
   return (
     <html lang="en">
+      
       <body className={inter.className}>
         <div className="LayoutMain">
           {children}
