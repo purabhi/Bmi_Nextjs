@@ -1,0 +1,19 @@
+.InputBox {
+    display: flex;
+    flex-direction: column;
+    margin-block: 9px;
+}
+
+.InputBox label {
+    font-weight: 600;
+    margin-block: 6px;
+}
+
+.InputBox input {
+    background: #f1f1f1;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+

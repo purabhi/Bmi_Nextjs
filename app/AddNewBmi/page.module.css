@@ -1,0 +1,94 @@
+.AddNewBook {
+    display: flex;
+    justify-content: center;
+    height: 86vh;
+    align-items: center;
+}
+
+.AddNewBook_Row {
+    box-shadow: var(--boxShadow);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.AddNewBook_Row h6 {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    margin-block: 0px;
+}
+
+.AddNewBook_Row .Btn {
+    width: 100%;
+    background: var(--main);
+    border-radius: 999px;
+    color: #fff;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.selectoption{
+    margin-top: 5px;
+    background: #f1f1f1;
+    width: 375px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: 500;
+
+}
+
+.select_label{
+    font-weight: 600;
+    margin-block: 6px;
+}
+
+.flexdiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.Btn{
+    width: 100%;
+    background: rgb(5, 78, 237);
+    border-radius: 999px;
+    color: #fff;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.BtnReset{
+    width: 100%;
+    background: rgb(67, 67, 67);
+    border-radius: 999px;
+    color: white;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.formdiv{
+    font-size: 14px;
+}
+.doughnut{
+    width: 300px;
+}
+
+@media screen and (max-width:768px) {
+
+    .flexdiv{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .doughnut{
+        width: 100%;
+    }
+    
+}

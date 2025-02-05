@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(root)/(routes)/page": "app/(root)/(routes)/page.js",
+  "/AddNewBmi/page": "app/AddNewBmi/page.js",
+  "/AddFriend/page": "app/AddFriend/page.js",
+  "/api/AddFriend/getAllFriend/route": "app/api/AddFriend/getAllFriend/route.js",
+  "/api/AddFriend/deleteFriend/route": "app/api/AddFriend/deleteFriend/route.js",
+  "/SavedBmi/page": "app/SavedBmi/page.js",
+  "/api/Bmi/deleteBmi/route": "app/api/Bmi/deleteBmi/route.js",
+  "/Statistic/page": "app/Statistic/page.js",
+  "/api/AddFriend/updateFriend/route": "app/api/AddFriend/updateFriend/route.js",
+  "/api/AddFriend/route": "app/api/AddFriend/route.js",
+  "/api/Bmi/getBmiData/route": "app/api/Bmi/getBmiData/route.js",
+  "/api/Bmi/route": "app/api/Bmi/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/register/page": "app/register/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js"
+}
